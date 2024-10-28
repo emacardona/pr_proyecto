@@ -5,7 +5,11 @@
         <group>
             <file>file:/C:/Users/ghost/Documents/NetBeansProjects/proyecto_web_CRUD/src/java/inicio_de_sesion/AuthFilter.java</file>
             <file>file:/C:/Users/ghost/Documents/NetBeansProjects/proyecto_web_CRUD/src/java/inicio_de_sesion/LoginServlet.java</file>
+            <file>file:/C:/Users/ghost/Documents/NetBeansProjects/proyecto_web_CRUD/src/java/modelo_clientes/sr_clientes.java</file>
             <file>file:/C:/Users/ghost/Documents/NetBeansProjects/proyecto_web_CRUD/src/java/inicio_de_sesion/LogoutServlet.java</file>
+            <file>file:/C:/Users/ghost/Documents/NetBeansProjects/proyecto_web_CRUD/src/java/modelo/ConexionBD.java</file>
+            <file>file:/C:/Users/ghost/Documents/NetBeansProjects/proyecto_web_CRUD/src/java/modelo_clientes/ConexionBD.java</file>
+            <file>file:/C:/Users/ghost/Documents/NetBeansProjects/proyecto_web_CRUD/src/java/modelo/Conexion.java</file>
             <file>file:/C:/Users/ghost/Documents/NetBeansProjects/proyecto_web_CRUD/web/index.jsp</file>
             <file>file:/C:/Users/ghost/Documents/NetBeansProjects/proyecto_web_CRUD/web/menu.jsp</file>
         </group>
