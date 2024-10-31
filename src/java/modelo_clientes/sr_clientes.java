@@ -94,7 +94,7 @@ public class sr_clientes extends HttpServlet {
         }
 
         // Redirigir de nuevo a la página JSP para mostrar el resultado
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("Clientes.jsp").forward(request, response);
     }
 }
 

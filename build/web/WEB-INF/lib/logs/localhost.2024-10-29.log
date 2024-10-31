@@ -1,0 +1,2080 @@
+29-Oct-2024 00:04:33.884 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+29-Oct-2024 00:04:33.884 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+29-Oct-2024 00:04:33.885 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@459f703f')
+29-Oct-2024 00:11:36.195 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/pr_javaweb] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:81)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:561)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:398)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:352)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 00:13:04.602 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/pr_javaweb] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:81)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:561)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:398)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:352)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 00:14:03.837 SEVERE [http-nio-8080-exec-11] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/pr_javaweb] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:81)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:561)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:398)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:352)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 00:34:30.749 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+29-Oct-2024 00:34:30.749 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+29-Oct-2024 00:38:52.325 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+29-Oct-2024 00:38:52.325 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+29-Oct-2024 00:38:52.326 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@4cb2918c')
+29-Oct-2024 01:06:34.445 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+29-Oct-2024 01:06:34.445 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+29-Oct-2024 21:04:52.661 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+29-Oct-2024 21:04:52.661 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+29-Oct-2024 21:04:52.662 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@27e7c77f')
+29-Oct-2024 21:12:03.386 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/pr_javaweb] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:81)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:561)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:398)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:352)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:12:50.855 SEVERE [http-nio-8080-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/pr_javaweb] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:81)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:561)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:398)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:352)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:19:01.306 SEVERE [http-nio-8080-exec-28] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/pr_javaweb] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/index.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:81)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:561)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:398)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:352)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:19:46.350 SEVERE [http-nio-8080-exec-36] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/Ventas.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/Ventas.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/Ventas.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/Ventas.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:81)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:561)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:398)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:352)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:19:47.773 SEVERE [http-nio-8080-exec-21] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [14] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Empleados_jsp.java]
+Only a type can be imported. Modelo.Puesto resolves to a package
+
+Ha tenido lugar un error en la línea: [15] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Empleados_jsp.java]
+Only a type can be imported. Modelo.Empleado resolves to a package
+
+Ha tenido lugar un error en la línea: [84] en el archivo jsp: [/Empleados.jsp]
+Puesto cannot be resolved to a type
+81:                             <label for="lbl_puesto">Puesto</label>
+82:                             <select name="drop_puesto" id="drop_puesto" class="form-control">
+83:                                 <%
+84:                                     Puesto puesto = new Puesto();
+85:                                     HashMap<String, String> drop = puesto.drop_puesto();
+86:                                     for (String i : drop.keySet()) {
+87:                                         out.write("<option value='" + i + "'>" + drop.get(i) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [84] en el archivo jsp: [/Empleados.jsp]
+Puesto cannot be resolved to a type
+81:                             <label for="lbl_puesto">Puesto</label>
+82:                             <select name="drop_puesto" id="drop_puesto" class="form-control">
+83:                                 <%
+84:                                     Puesto puesto = new Puesto();
+85:                                     HashMap<String, String> drop = puesto.drop_puesto();
+86:                                     for (String i : drop.keySet()) {
+87:                                         out.write("<option value='" + i + "'>" + drop.get(i) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [155] en el archivo jsp: [/Empleados.jsp]
+Empleado cannot be resolved to a type
+152:                 </thead>
+153:                 <tbody id="tbl_empleados">
+154:                     <%
+155:                         Empleado empleado = new Empleado();
+156:                         DefaultTableModel tabla = new DefaultTableModel();
+157:                         tabla = empleado.leer();
+158:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+
+
+Ha tenido lugar un error en la línea: [155] en el archivo jsp: [/Empleados.jsp]
+Empleado cannot be resolved to a type
+152:                 </thead>
+153:                 <tbody id="tbl_empleados">
+154:                     <%
+155:                         Empleado empleado = new Empleado();
+156:                         DefaultTableModel tabla = new DefaultTableModel();
+157:                         tabla = empleado.leer();
+158:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [14] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Empleados_jsp.java]
+Only a type can be imported. Modelo.Puesto resolves to a package
+
+Ha tenido lugar un error en la línea: [15] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Empleados_jsp.java]
+Only a type can be imported. Modelo.Empleado resolves to a package
+
+Ha tenido lugar un error en la línea: [84] en el archivo jsp: [/Empleados.jsp]
+Puesto cannot be resolved to a type
+81:                             <label for="lbl_puesto">Puesto</label>
+82:                             <select name="drop_puesto" id="drop_puesto" class="form-control">
+83:                                 <%
+84:                                     Puesto puesto = new Puesto();
+85:                                     HashMap<String, String> drop = puesto.drop_puesto();
+86:                                     for (String i : drop.keySet()) {
+87:                                         out.write("<option value='" + i + "'>" + drop.get(i) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [84] en el archivo jsp: [/Empleados.jsp]
+Puesto cannot be resolved to a type
+81:                             <label for="lbl_puesto">Puesto</label>
+82:                             <select name="drop_puesto" id="drop_puesto" class="form-control">
+83:                                 <%
+84:                                     Puesto puesto = new Puesto();
+85:                                     HashMap<String, String> drop = puesto.drop_puesto();
+86:                                     for (String i : drop.keySet()) {
+87:                                         out.write("<option value='" + i + "'>" + drop.get(i) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [155] en el archivo jsp: [/Empleados.jsp]
+Empleado cannot be resolved to a type
+152:                 </thead>
+153:                 <tbody id="tbl_empleados">
+154:                     <%
+155:                         Empleado empleado = new Empleado();
+156:                         DefaultTableModel tabla = new DefaultTableModel();
+157:                         tabla = empleado.leer();
+158:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+
+
+Ha tenido lugar un error en la línea: [155] en el archivo jsp: [/Empleados.jsp]
+Empleado cannot be resolved to a type
+152:                 </thead>
+153:                 <tbody id="tbl_empleados">
+154:                     <%
+155:                         Empleado empleado = new Empleado();
+156:                         DefaultTableModel tabla = new DefaultTableModel();
+157:                         tabla = empleado.leer();
+158:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:81)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:561)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:398)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:352)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:21:04.135 SEVERE [http-nio-8080-exec-40] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [14] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Empleados_jsp.java]
+Only a type can be imported. modelo.Puesto resolves to a package
+
+Ha tenido lugar un error en la línea: [84] en el archivo jsp: [/Empleados.jsp]
+Puesto cannot be resolved to a type
+81:                             <label for="lbl_puesto">Puesto</label>
+82:                             <select name="drop_puesto" id="drop_puesto" class="form-control">
+83:                                 <%
+84:                                     Puesto puesto = new Puesto();
+85:                                     HashMap<String, String> drop = puesto.drop_puesto();
+86:                                     for (String i : drop.keySet()) {
+87:                                         out.write("<option value='" + i + "'>" + drop.get(i) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [84] en el archivo jsp: [/Empleados.jsp]
+Puesto cannot be resolved to a type
+81:                             <label for="lbl_puesto">Puesto</label>
+82:                             <select name="drop_puesto" id="drop_puesto" class="form-control">
+83:                                 <%
+84:                                     Puesto puesto = new Puesto();
+85:                                     HashMap<String, String> drop = puesto.drop_puesto();
+86:                                     for (String i : drop.keySet()) {
+87:                                         out.write("<option value='" + i + "'>" + drop.get(i) + "</option>");
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [14] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Empleados_jsp.java]
+Only a type can be imported. modelo.Puesto resolves to a package
+
+Ha tenido lugar un error en la línea: [84] en el archivo jsp: [/Empleados.jsp]
+Puesto cannot be resolved to a type
+81:                             <label for="lbl_puesto">Puesto</label>
+82:                             <select name="drop_puesto" id="drop_puesto" class="form-control">
+83:                                 <%
+84:                                     Puesto puesto = new Puesto();
+85:                                     HashMap<String, String> drop = puesto.drop_puesto();
+86:                                     for (String i : drop.keySet()) {
+87:                                         out.write("<option value='" + i + "'>" + drop.get(i) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [84] en el archivo jsp: [/Empleados.jsp]
+Puesto cannot be resolved to a type
+81:                             <label for="lbl_puesto">Puesto</label>
+82:                             <select name="drop_puesto" id="drop_puesto" class="form-control">
+83:                                 <%
+84:                                     Puesto puesto = new Puesto();
+85:                                     HashMap<String, String> drop = puesto.drop_puesto();
+86:                                     for (String i : drop.keySet()) {
+87:                                         out.write("<option value='" + i + "'>" + drop.get(i) + "</option>");
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:81)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:561)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:398)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:352)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:21:18.119 SEVERE [http-nio-8080-exec-45] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/Ventas.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/Ventas.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/Ventas.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [111] en el archivo jsp: [/Ventas.jsp]
+Producto cannot be resolved to a type
+108:             <label for='id_producto'><b>Producto:</b></label>
+109:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+110:                 <% 
+111:                     Producto producto = new Producto();
+112:                     DefaultTableModel tablaProducto = producto.leer();
+113:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+114:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:81)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:561)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:398)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:352)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:25:26.373 SEVERE [http-nio-8080-exec-51] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [14] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Ventas_jsp.java]
+Only a type can be imported. modelo.Venta resolves to a package
+
+Ha tenido lugar un error en la línea: [16] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Ventas_jsp.java]
+Only a type can be imported. modelo.Empleado resolves to a package
+
+Ha tenido lugar un error en la línea: [17] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Ventas_jsp.java]
+The type modelo_producto.Producto is not visible
+
+Ha tenido lugar un error en la línea: [86] en el archivo jsp: [/Ventas.jsp]
+Empleado cannot be resolved to a type
+83:             <label for="txt_id_empleado"><b>ID de Empleado</b></label> 
+84:                             <select name="txt_id_empleado" id="txt_id_empleado" class="form-control" required>
+85:                                 <% 
+86:                                     Empleado empleado = new Empleado();
+87:                                     DefaultTableModel tablaEmpleado = empleado.leer();
+88:                                     for (int t = 0; t < tablaEmpleado.getRowCount(); t++) {
+89:                                         out.println("<option value='" + tablaEmpleado.getValueAt(t, 0) + "'>" + tablaEmpleado.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [86] en el archivo jsp: [/Ventas.jsp]
+Empleado cannot be resolved to a type
+83:             <label for="txt_id_empleado"><b>ID de Empleado</b></label> 
+84:                             <select name="txt_id_empleado" id="txt_id_empleado" class="form-control" required>
+85:                                 <% 
+86:                                     Empleado empleado = new Empleado();
+87:                                     DefaultTableModel tablaEmpleado = empleado.leer();
+88:                                     for (int t = 0; t < tablaEmpleado.getRowCount(); t++) {
+89:                                         out.println("<option value='" + tablaEmpleado.getValueAt(t, 0) + "'>" + tablaEmpleado.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [112] en el archivo jsp: [/Ventas.jsp]
+Producto cannot be resolved to a type
+109:             <label for='id_producto'><b>Producto:</b></label>
+110:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+111:                 <% 
+112:                     Producto producto = new Producto();
+113:                     DefaultTableModel tablaProducto = producto.leer();
+114:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+115:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [112] en el archivo jsp: [/Ventas.jsp]
+Producto cannot be resolved to a type
+109:             <label for='id_producto'><b>Producto:</b></label>
+110:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+111:                 <% 
+112:                     Producto producto = new Producto();
+113:                     DefaultTableModel tablaProducto = producto.leer();
+114:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+115:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [172] en el archivo jsp: [/Ventas.jsp]
+Venta cannot be resolved to a type
+169:             
+170:       <tbody id="tbl_venta">  
+171:       <%
+172:               Venta venta = new Venta();
+173:               DefaultTableModel tablaVentas = venta.leer();
+174:               for (int t=0;t<tablaVentas.getRowCount();t++) {
+175:               out.println("<tr data-id=" + tablaVentas.getValueAt(t, 0) + "' data-id_p='" + tablaVentas.getValueAt(t, 5) + "' data-id_producto='" + tablaVentas.getValueAt(t, 6) + "'>");
+
+
+Ha tenido lugar un error en la línea: [172] en el archivo jsp: [/Ventas.jsp]
+Venta cannot be resolved to a type
+169:             
+170:       <tbody id="tbl_venta">  
+171:       <%
+172:               Venta venta = new Venta();
+173:               DefaultTableModel tablaVentas = venta.leer();
+174:               for (int t=0;t<tablaVentas.getRowCount();t++) {
+175:               out.println("<tr data-id=" + tablaVentas.getValueAt(t, 0) + "' data-id_p='" + tablaVentas.getValueAt(t, 5) + "' data-id_producto='" + tablaVentas.getValueAt(t, 6) + "'>");
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [14] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Ventas_jsp.java]
+Only a type can be imported. modelo.Venta resolves to a package
+
+Ha tenido lugar un error en la línea: [16] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Ventas_jsp.java]
+Only a type can be imported. modelo.Empleado resolves to a package
+
+Ha tenido lugar un error en la línea: [17] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Ventas_jsp.java]
+The type modelo_producto.Producto is not visible
+
+Ha tenido lugar un error en la línea: [86] en el archivo jsp: [/Ventas.jsp]
+Empleado cannot be resolved to a type
+83:             <label for="txt_id_empleado"><b>ID de Empleado</b></label> 
+84:                             <select name="txt_id_empleado" id="txt_id_empleado" class="form-control" required>
+85:                                 <% 
+86:                                     Empleado empleado = new Empleado();
+87:                                     DefaultTableModel tablaEmpleado = empleado.leer();
+88:                                     for (int t = 0; t < tablaEmpleado.getRowCount(); t++) {
+89:                                         out.println("<option value='" + tablaEmpleado.getValueAt(t, 0) + "'>" + tablaEmpleado.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [86] en el archivo jsp: [/Ventas.jsp]
+Empleado cannot be resolved to a type
+83:             <label for="txt_id_empleado"><b>ID de Empleado</b></label> 
+84:                             <select name="txt_id_empleado" id="txt_id_empleado" class="form-control" required>
+85:                                 <% 
+86:                                     Empleado empleado = new Empleado();
+87:                                     DefaultTableModel tablaEmpleado = empleado.leer();
+88:                                     for (int t = 0; t < tablaEmpleado.getRowCount(); t++) {
+89:                                         out.println("<option value='" + tablaEmpleado.getValueAt(t, 0) + "'>" + tablaEmpleado.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [112] en el archivo jsp: [/Ventas.jsp]
+Producto cannot be resolved to a type
+109:             <label for='id_producto'><b>Producto:</b></label>
+110:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+111:                 <% 
+112:                     Producto producto = new Producto();
+113:                     DefaultTableModel tablaProducto = producto.leer();
+114:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+115:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [112] en el archivo jsp: [/Ventas.jsp]
+Producto cannot be resolved to a type
+109:             <label for='id_producto'><b>Producto:</b></label>
+110:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+111:                 <% 
+112:                     Producto producto = new Producto();
+113:                     DefaultTableModel tablaProducto = producto.leer();
+114:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+115:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [172] en el archivo jsp: [/Ventas.jsp]
+Venta cannot be resolved to a type
+169:             
+170:       <tbody id="tbl_venta">  
+171:       <%
+172:               Venta venta = new Venta();
+173:               DefaultTableModel tablaVentas = venta.leer();
+174:               for (int t=0;t<tablaVentas.getRowCount();t++) {
+175:               out.println("<tr data-id=" + tablaVentas.getValueAt(t, 0) + "' data-id_p='" + tablaVentas.getValueAt(t, 5) + "' data-id_producto='" + tablaVentas.getValueAt(t, 6) + "'>");
+
+
+Ha tenido lugar un error en la línea: [172] en el archivo jsp: [/Ventas.jsp]
+Venta cannot be resolved to a type
+169:             
+170:       <tbody id="tbl_venta">  
+171:       <%
+172:               Venta venta = new Venta();
+173:               DefaultTableModel tablaVentas = venta.leer();
+174:               for (int t=0;t<tablaVentas.getRowCount();t++) {
+175:               out.println("<tr data-id=" + tablaVentas.getValueAt(t, 0) + "' data-id_p='" + tablaVentas.getValueAt(t, 5) + "' data-id_producto='" + tablaVentas.getValueAt(t, 6) + "'>");
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:81)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:561)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:398)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:352)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:25:29.192 SEVERE [http-nio-8080-exec-47] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [org.apache.jasper.JasperException: java.lang.ClassNotFoundException: org.apache.jsp.Ventas_jsp] con causa raíz
+	java.lang.ClassNotFoundException: org.apache.jsp.Ventas_jsp
+		at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:192)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:413)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:25:49.503 SEVERE [http-nio-8080-exec-47] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [14] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Ventas_jsp.java]
+Only a type can be imported. modelo.Venta resolves to a package
+
+Ha tenido lugar un error en la línea: [16] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Ventas_jsp.java]
+Only a type can be imported. modelo.Empleado resolves to a package
+
+Ha tenido lugar un error en la línea: [17] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Ventas_jsp.java]
+The type modelo_producto.Producto is not visible
+
+Ha tenido lugar un error en la línea: [86] en el archivo jsp: [/Ventas.jsp]
+Empleado cannot be resolved to a type
+83:             <label for="txt_id_empleado"><b>ID de Empleado</b></label> 
+84:                             <select name="txt_id_empleado" id="txt_id_empleado" class="form-control" required>
+85:                                 <% 
+86:                                     Empleado empleado = new Empleado();
+87:                                     DefaultTableModel tablaEmpleado = empleado.leer();
+88:                                     for (int t = 0; t < tablaEmpleado.getRowCount(); t++) {
+89:                                         out.println("<option value='" + tablaEmpleado.getValueAt(t, 0) + "'>" + tablaEmpleado.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [86] en el archivo jsp: [/Ventas.jsp]
+Empleado cannot be resolved to a type
+83:             <label for="txt_id_empleado"><b>ID de Empleado</b></label> 
+84:                             <select name="txt_id_empleado" id="txt_id_empleado" class="form-control" required>
+85:                                 <% 
+86:                                     Empleado empleado = new Empleado();
+87:                                     DefaultTableModel tablaEmpleado = empleado.leer();
+88:                                     for (int t = 0; t < tablaEmpleado.getRowCount(); t++) {
+89:                                         out.println("<option value='" + tablaEmpleado.getValueAt(t, 0) + "'>" + tablaEmpleado.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [112] en el archivo jsp: [/Ventas.jsp]
+Producto cannot be resolved to a type
+109:             <label for='id_producto'><b>Producto:</b></label>
+110:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+111:                 <% 
+112:                     Producto producto = new Producto();
+113:                     DefaultTableModel tablaProducto = producto.leer();
+114:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+115:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [112] en el archivo jsp: [/Ventas.jsp]
+Producto cannot be resolved to a type
+109:             <label for='id_producto'><b>Producto:</b></label>
+110:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+111:                 <% 
+112:                     Producto producto = new Producto();
+113:                     DefaultTableModel tablaProducto = producto.leer();
+114:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+115:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [172] en el archivo jsp: [/Ventas.jsp]
+Venta cannot be resolved to a type
+169:             
+170:       <tbody id="tbl_venta">  
+171:       <%
+172:               Venta venta = new Venta();
+173:               DefaultTableModel tablaVentas = venta.leer();
+174:               for (int t=0;t<tablaVentas.getRowCount();t++) {
+175:               out.println("<tr data-id=" + tablaVentas.getValueAt(t, 0) + "' data-id_p='" + tablaVentas.getValueAt(t, 5) + "' data-id_producto='" + tablaVentas.getValueAt(t, 6) + "'>");
+
+
+Ha tenido lugar un error en la línea: [172] en el archivo jsp: [/Ventas.jsp]
+Venta cannot be resolved to a type
+169:             
+170:       <tbody id="tbl_venta">  
+171:       <%
+172:               Venta venta = new Venta();
+173:               DefaultTableModel tablaVentas = venta.leer();
+174:               for (int t=0;t<tablaVentas.getRowCount();t++) {
+175:               out.println("<tr data-id=" + tablaVentas.getValueAt(t, 0) + "' data-id_p='" + tablaVentas.getValueAt(t, 5) + "' data-id_producto='" + tablaVentas.getValueAt(t, 6) + "'>");
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [14] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Ventas_jsp.java]
+Only a type can be imported. modelo.Venta resolves to a package
+
+Ha tenido lugar un error en la línea: [16] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Ventas_jsp.java]
+Only a type can be imported. modelo.Empleado resolves to a package
+
+Ha tenido lugar un error en la línea: [17] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Ventas_jsp.java]
+The type modelo_producto.Producto is not visible
+
+Ha tenido lugar un error en la línea: [86] en el archivo jsp: [/Ventas.jsp]
+Empleado cannot be resolved to a type
+83:             <label for="txt_id_empleado"><b>ID de Empleado</b></label> 
+84:                             <select name="txt_id_empleado" id="txt_id_empleado" class="form-control" required>
+85:                                 <% 
+86:                                     Empleado empleado = new Empleado();
+87:                                     DefaultTableModel tablaEmpleado = empleado.leer();
+88:                                     for (int t = 0; t < tablaEmpleado.getRowCount(); t++) {
+89:                                         out.println("<option value='" + tablaEmpleado.getValueAt(t, 0) + "'>" + tablaEmpleado.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [86] en el archivo jsp: [/Ventas.jsp]
+Empleado cannot be resolved to a type
+83:             <label for="txt_id_empleado"><b>ID de Empleado</b></label> 
+84:                             <select name="txt_id_empleado" id="txt_id_empleado" class="form-control" required>
+85:                                 <% 
+86:                                     Empleado empleado = new Empleado();
+87:                                     DefaultTableModel tablaEmpleado = empleado.leer();
+88:                                     for (int t = 0; t < tablaEmpleado.getRowCount(); t++) {
+89:                                         out.println("<option value='" + tablaEmpleado.getValueAt(t, 0) + "'>" + tablaEmpleado.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [112] en el archivo jsp: [/Ventas.jsp]
+Producto cannot be resolved to a type
+109:             <label for='id_producto'><b>Producto:</b></label>
+110:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+111:                 <% 
+112:                     Producto producto = new Producto();
+113:                     DefaultTableModel tablaProducto = producto.leer();
+114:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+115:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [112] en el archivo jsp: [/Ventas.jsp]
+Producto cannot be resolved to a type
+109:             <label for='id_producto'><b>Producto:</b></label>
+110:             <select name='id_producto[]' class='form-control' id="selectProductos" required>
+111:                 <% 
+112:                     Producto producto = new Producto();
+113:                     DefaultTableModel tablaProducto = producto.leer();
+114:                     for (int t = 0; t < tablaProducto.getRowCount(); t++) {
+115:                     out.println("<option value='" + tablaProducto.getValueAt(t, 0) + "'>" + tablaProducto.getValueAt(t, 1) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [172] en el archivo jsp: [/Ventas.jsp]
+Venta cannot be resolved to a type
+169:             
+170:       <tbody id="tbl_venta">  
+171:       <%
+172:               Venta venta = new Venta();
+173:               DefaultTableModel tablaVentas = venta.leer();
+174:               for (int t=0;t<tablaVentas.getRowCount();t++) {
+175:               out.println("<tr data-id=" + tablaVentas.getValueAt(t, 0) + "' data-id_p='" + tablaVentas.getValueAt(t, 5) + "' data-id_producto='" + tablaVentas.getValueAt(t, 6) + "'>");
+
+
+Ha tenido lugar un error en la línea: [172] en el archivo jsp: [/Ventas.jsp]
+Venta cannot be resolved to a type
+169:             
+170:       <tbody id="tbl_venta">  
+171:       <%
+172:               Venta venta = new Venta();
+173:               DefaultTableModel tablaVentas = venta.leer();
+174:               for (int t=0;t<tablaVentas.getRowCount();t++) {
+175:               out.println("<tr data-id=" + tablaVentas.getValueAt(t, 0) + "' data-id_p='" + tablaVentas.getValueAt(t, 5) + "' data-id_producto='" + tablaVentas.getValueAt(t, 6) + "'>");
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:81)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:561)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:398)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:352)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:25:50.470 SEVERE [http-nio-8080-exec-56] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [14] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Empleados_jsp.java]
+Only a type can be imported. modelo.Puesto resolves to a package
+
+Ha tenido lugar un error en la línea: [15] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Empleados_jsp.java]
+Only a type can be imported. modelo.Empleado resolves to a package
+
+Ha tenido lugar un error en la línea: [84] en el archivo jsp: [/Empleados.jsp]
+Puesto cannot be resolved to a type
+81:                             <label for="lbl_puesto">Puesto</label>
+82:                             <select name="drop_puesto" id="drop_puesto" class="form-control">
+83:                                 <%
+84:                                     Puesto puesto = new Puesto();
+85:                                     HashMap<String, String> drop = puesto.drop_puesto();
+86:                                     for (String i : drop.keySet()) {
+87:                                         out.write("<option value='" + i + "'>" + drop.get(i) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [84] en el archivo jsp: [/Empleados.jsp]
+Puesto cannot be resolved to a type
+81:                             <label for="lbl_puesto">Puesto</label>
+82:                             <select name="drop_puesto" id="drop_puesto" class="form-control">
+83:                                 <%
+84:                                     Puesto puesto = new Puesto();
+85:                                     HashMap<String, String> drop = puesto.drop_puesto();
+86:                                     for (String i : drop.keySet()) {
+87:                                         out.write("<option value='" + i + "'>" + drop.get(i) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [155] en el archivo jsp: [/Empleados.jsp]
+Empleado cannot be resolved to a type
+152:                 </thead>
+153:                 <tbody id="tbl_empleados">
+154:                     <%
+155:                         Empleado empleado = new Empleado();
+156:                         DefaultTableModel tabla = new DefaultTableModel();
+157:                         tabla = empleado.leer();
+158:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+
+
+Ha tenido lugar un error en la línea: [155] en el archivo jsp: [/Empleados.jsp]
+Empleado cannot be resolved to a type
+152:                 </thead>
+153:                 <tbody id="tbl_empleados">
+154:                     <%
+155:                         Empleado empleado = new Empleado();
+156:                         DefaultTableModel tabla = new DefaultTableModel();
+157:                         tabla = empleado.leer();
+158:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [14] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Empleados_jsp.java]
+Only a type can be imported. modelo.Puesto resolves to a package
+
+Ha tenido lugar un error en la línea: [15] en el fichero java generado: [C:\Users\ghost\Documents\NetBeansProjects\proyecto_web_CRUD\apache-tomcat-9.0.96\work\Catalina\localhost\proyecto_web_CRUD\org\apache\jsp\Empleados_jsp.java]
+Only a type can be imported. modelo.Empleado resolves to a package
+
+Ha tenido lugar un error en la línea: [84] en el archivo jsp: [/Empleados.jsp]
+Puesto cannot be resolved to a type
+81:                             <label for="lbl_puesto">Puesto</label>
+82:                             <select name="drop_puesto" id="drop_puesto" class="form-control">
+83:                                 <%
+84:                                     Puesto puesto = new Puesto();
+85:                                     HashMap<String, String> drop = puesto.drop_puesto();
+86:                                     for (String i : drop.keySet()) {
+87:                                         out.write("<option value='" + i + "'>" + drop.get(i) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [84] en el archivo jsp: [/Empleados.jsp]
+Puesto cannot be resolved to a type
+81:                             <label for="lbl_puesto">Puesto</label>
+82:                             <select name="drop_puesto" id="drop_puesto" class="form-control">
+83:                                 <%
+84:                                     Puesto puesto = new Puesto();
+85:                                     HashMap<String, String> drop = puesto.drop_puesto();
+86:                                     for (String i : drop.keySet()) {
+87:                                         out.write("<option value='" + i + "'>" + drop.get(i) + "</option>");
+
+
+Ha tenido lugar un error en la línea: [155] en el archivo jsp: [/Empleados.jsp]
+Empleado cannot be resolved to a type
+152:                 </thead>
+153:                 <tbody id="tbl_empleados">
+154:                     <%
+155:                         Empleado empleado = new Empleado();
+156:                         DefaultTableModel tabla = new DefaultTableModel();
+157:                         tabla = empleado.leer();
+158:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+
+
+Ha tenido lugar un error en la línea: [155] en el archivo jsp: [/Empleados.jsp]
+Empleado cannot be resolved to a type
+152:                 </thead>
+153:                 <tbody id="tbl_empleados">
+154:                     <%
+155:                         Empleado empleado = new Empleado();
+156:                         DefaultTableModel tabla = new DefaultTableModel();
+157:                         tabla = empleado.leer();
+158:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:81)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:561)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:398)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:352)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:25:52.904 SEVERE [http-nio-8080-exec-57] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [Ha sucedido una excepción al procesar la página JSP [Proveedores.jsp] en línea [112]
+
+109:                 <tbody id="tbl_proveedor">
+110:                     <% 
+111:                         Proveedor proveedor = new Proveedor();
+112:                         DefaultTableModel tabla = proveedor.leer();
+113:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+114:                             out.println("<tr data-id='" + tabla.getValueAt(t, 0) + "'>");
+115:                             out.println("<td>" + tabla.getValueAt(t, 1) + "</td>");
+
+
+Stacktrace:] con causa raíz
+	java.lang.RuntimeException: Uncompilable code - class Conexion is public, should be declared in a file named Conexion.java
+		at modelo.Conexion.<clinit>(Conexion_1.java:1)
+		at modelo.Proveedor.leer(Proveedor.java:45)
+		at org.apache.jsp.Proveedores_jsp._jspService(Proveedores_jsp.java:195)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:25:53.570 SEVERE [http-nio-8080-exec-58] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [Ha sucedido una excepción al procesar la página JSP [Proveedores.jsp] en línea [112]
+
+109:                 <tbody id="tbl_proveedor">
+110:                     <% 
+111:                         Proveedor proveedor = new Proveedor();
+112:                         DefaultTableModel tabla = proveedor.leer();
+113:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+114:                             out.println("<tr data-id='" + tabla.getValueAt(t, 0) + "'>");
+115:                             out.println("<td>" + tabla.getValueAt(t, 1) + "</td>");
+
+
+Stacktrace:] con causa raíz
+	java.lang.ExceptionInInitializerError: Exception java.lang.RuntimeException: Uncompilable code - class Conexion is public, should be declared in a file named Conexion.java [in thread "http-nio-8080-exec-57"]
+		at modelo.Conexion.<clinit>(Conexion_1.java:1)
+		at modelo.Proveedor.leer(Proveedor.java:45)
+		at org.apache.jsp.Proveedores_jsp._jspService(Proveedores_jsp.java:195)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:25:54.252 SEVERE [http-nio-8080-exec-59] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [Ha sucedido una excepción al procesar la página JSP [Proveedores.jsp] en línea [112]
+
+109:                 <tbody id="tbl_proveedor">
+110:                     <% 
+111:                         Proveedor proveedor = new Proveedor();
+112:                         DefaultTableModel tabla = proveedor.leer();
+113:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+114:                             out.println("<tr data-id='" + tabla.getValueAt(t, 0) + "'>");
+115:                             out.println("<td>" + tabla.getValueAt(t, 1) + "</td>");
+
+
+Stacktrace:] con causa raíz
+	java.lang.ExceptionInInitializerError: Exception java.lang.RuntimeException: Uncompilable code - class Conexion is public, should be declared in a file named Conexion.java [in thread "http-nio-8080-exec-57"]
+		at modelo.Conexion.<clinit>(Conexion_1.java:1)
+		at modelo.Proveedor.leer(Proveedor.java:45)
+		at org.apache.jsp.Proveedores_jsp._jspService(Proveedores_jsp.java:195)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:25:54.953 SEVERE [http-nio-8080-exec-53] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [Ha sucedido una excepción al procesar la página JSP [Proveedores.jsp] en línea [112]
+
+109:                 <tbody id="tbl_proveedor">
+110:                     <% 
+111:                         Proveedor proveedor = new Proveedor();
+112:                         DefaultTableModel tabla = proveedor.leer();
+113:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+114:                             out.println("<tr data-id='" + tabla.getValueAt(t, 0) + "'>");
+115:                             out.println("<td>" + tabla.getValueAt(t, 1) + "</td>");
+
+
+Stacktrace:] con causa raíz
+	java.lang.ExceptionInInitializerError: Exception java.lang.RuntimeException: Uncompilable code - class Conexion is public, should be declared in a file named Conexion.java [in thread "http-nio-8080-exec-57"]
+		at modelo.Conexion.<clinit>(Conexion_1.java:1)
+		at modelo.Proveedor.leer(Proveedor.java:45)
+		at org.apache.jsp.Proveedores_jsp._jspService(Proveedores_jsp.java:195)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:28:14.897 SEVERE [http-nio-8080-exec-59] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [Ha sucedido una excepción al procesar la página JSP [Proveedores.jsp] en línea [112]
+
+109:                 <tbody id="tbl_proveedor">
+110:                     <% 
+111:                         Proveedor proveedor = new Proveedor();
+112:                         DefaultTableModel tabla = proveedor.leer();
+113:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+114:                             out.println("<tr data-id='" + tabla.getValueAt(t, 0) + "'>");
+115:                             out.println("<td>" + tabla.getValueAt(t, 1) + "</td>");
+
+
+Stacktrace:] con causa raíz
+	java.lang.ExceptionInInitializerError: Exception java.lang.RuntimeException: Uncompilable code - class Conexion is public, should be declared in a file named Conexion.java [in thread "http-nio-8080-exec-57"]
+		at modelo.Conexion.<clinit>(Conexion_1.java:1)
+		at modelo.Proveedor.leer(Proveedor.java:45)
+		at org.apache.jsp.Proveedores_jsp._jspService(Proveedores_jsp.java:195)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:28:17.624 SEVERE [http-nio-8080-exec-60] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [Ha sucedido una excepción al procesar la página JSP [Proveedores.jsp] en línea [112]
+
+109:                 <tbody id="tbl_proveedor">
+110:                     <% 
+111:                         Proveedor proveedor = new Proveedor();
+112:                         DefaultTableModel tabla = proveedor.leer();
+113:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+114:                             out.println("<tr data-id='" + tabla.getValueAt(t, 0) + "'>");
+115:                             out.println("<td>" + tabla.getValueAt(t, 1) + "</td>");
+
+
+Stacktrace:] con causa raíz
+	java.lang.ExceptionInInitializerError: Exception java.lang.RuntimeException: Uncompilable code - class Conexion is public, should be declared in a file named Conexion.java [in thread "http-nio-8080-exec-57"]
+		at modelo.Conexion.<clinit>(Conexion_1.java:1)
+		at modelo.Proveedor.leer(Proveedor.java:45)
+		at org.apache.jsp.Proveedores_jsp._jspService(Proveedores_jsp.java:195)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:28:22.831 SEVERE [http-nio-8080-exec-59] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [Ha sucedido una excepción al procesar la página JSP [Proveedores.jsp] en línea [112]
+
+109:                 <tbody id="tbl_proveedor">
+110:                     <% 
+111:                         Proveedor proveedor = new Proveedor();
+112:                         DefaultTableModel tabla = proveedor.leer();
+113:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+114:                             out.println("<tr data-id='" + tabla.getValueAt(t, 0) + "'>");
+115:                             out.println("<td>" + tabla.getValueAt(t, 1) + "</td>");
+
+
+Stacktrace:] con causa raíz
+	java.lang.ExceptionInInitializerError: Exception java.lang.RuntimeException: Uncompilable code - class Conexion is public, should be declared in a file named Conexion.java [in thread "http-nio-8080-exec-57"]
+		at modelo.Conexion.<clinit>(Conexion_1.java:1)
+		at modelo.Proveedor.leer(Proveedor.java:45)
+		at org.apache.jsp.Proveedores_jsp._jspService(Proveedores_jsp.java:195)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:28:26.308 SEVERE [http-nio-8080-exec-53] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [Ha sucedido una excepción al procesar la página JSP [Proveedores.jsp] en línea [112]
+
+109:                 <tbody id="tbl_proveedor">
+110:                     <% 
+111:                         Proveedor proveedor = new Proveedor();
+112:                         DefaultTableModel tabla = proveedor.leer();
+113:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+114:                             out.println("<tr data-id='" + tabla.getValueAt(t, 0) + "'>");
+115:                             out.println("<td>" + tabla.getValueAt(t, 1) + "</td>");
+
+
+Stacktrace:] con causa raíz
+	java.lang.ExceptionInInitializerError: Exception java.lang.RuntimeException: Uncompilable code - class Conexion is public, should be declared in a file named Conexion.java [in thread "http-nio-8080-exec-57"]
+		at modelo.Conexion.<clinit>(Conexion_1.java:1)
+		at modelo.Proveedor.leer(Proveedor.java:45)
+		at org.apache.jsp.Proveedores_jsp._jspService(Proveedores_jsp.java:195)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:31:49.870 SEVERE [http-nio-8080-exec-58] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [Ha sucedido una excepción al procesar la página JSP [Proveedores.jsp] en línea [112]
+
+109:                 <tbody id="tbl_proveedor">
+110:                     <% 
+111:                         Proveedor proveedor = new Proveedor();
+112:                         DefaultTableModel tabla = proveedor.leer();
+113:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+114:                             out.println("<tr data-id='" + tabla.getValueAt(t, 0) + "'>");
+115:                             out.println("<td>" + tabla.getValueAt(t, 1) + "</td>");
+
+
+Stacktrace:] con causa raíz
+	java.lang.ExceptionInInitializerError: Exception java.lang.RuntimeException: Uncompilable code - class Conexion is public, should be declared in a file named Conexion.java [in thread "http-nio-8080-exec-57"]
+		at modelo.Conexion.<clinit>(Conexion_1.java:1)
+		at modelo.Proveedor.leer(Proveedor.java:45)
+		at org.apache.jsp.Proveedores_jsp._jspService(Proveedores_jsp.java:195)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:33:34.581 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+29-Oct-2024 21:33:34.582 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+29-Oct-2024 21:33:55.389 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+29-Oct-2024 21:33:55.389 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+29-Oct-2024 21:33:55.390 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@6adc5b9c')
+29-Oct-2024 21:34:00.798 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [Ha sucedido una excepción al procesar la página JSP [Proveedores.jsp] en línea [112]
+
+109:                 <tbody id="tbl_proveedor">
+110:                     <% 
+111:                         Proveedor proveedor = new Proveedor();
+112:                         DefaultTableModel tabla = proveedor.leer();
+113:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+114:                             out.println("<tr data-id='" + tabla.getValueAt(t, 0) + "'>");
+115:                             out.println("<td>" + tabla.getValueAt(t, 1) + "</td>");
+
+
+Stacktrace:] con causa raíz
+	java.lang.RuntimeException: Uncompilable code - class Conexion is public, should be declared in a file named Conexion.java
+		at modelo.Conexion.<clinit>(Conexion_1.java:1)
+		at modelo.Proveedor.leer(Proveedor.java:45)
+		at org.apache.jsp.Proveedores_jsp._jspService(Proveedores_jsp.java:195)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:36:12.083 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/proyecto_web_CRUD] lanzó la excepción [Ha sucedido una excepción al procesar la página JSP [Proveedores.jsp] en línea [112]
+
+109:                 <tbody id="tbl_proveedor">
+110:                     <% 
+111:                         Proveedor proveedor = new Proveedor();
+112:                         DefaultTableModel tabla = proveedor.leer();
+113:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+114:                             out.println("<tr data-id='" + tabla.getValueAt(t, 0) + "'>");
+115:                             out.println("<td>" + tabla.getValueAt(t, 1) + "</td>");
+
+
+Stacktrace:] con causa raíz
+	java.lang.ExceptionInInitializerError: Exception java.lang.RuntimeException: Uncompilable code - class Conexion is public, should be declared in a file named Conexion.java [in thread "http-nio-8080-exec-5"]
+		at modelo.Conexion.<clinit>(Conexion_1.java:1)
+		at modelo.Proveedor.leer(Proveedor.java:45)
+		at org.apache.jsp.Proveedores_jsp._jspService(Proveedores_jsp.java:195)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:36:45.042 SEVERE [http-nio-8080-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/Web_proyecto] lanzó la excepción [Ha sucedido una excepción al procesar la página JSP [/index.jsp] en línea [71]
+
+68:                 <tbody id="tbl_proveedor">
+69:                     <% 
+70:                         Proveedor proveedor = new Proveedor();
+71:                         DefaultTableModel tabla = proveedor.leer();
+72:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+73:                             out.println("<tr data-id='" + tabla.getValueAt(t, 0) + "'>");
+74:                             out.println("<td>" + tabla.getValueAt(t, 1) + "</td>");
+
+
+Stacktrace:] con causa raíz
+	java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "this.cn.conexionBD" is null
+		at modelo.Proveedor.leer(Proveedor.java:51)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:189)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:37:06.969 SEVERE [http-nio-8080-exec-20] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/Web_proyecto] lanzó la excepción [Ha sucedido una excepción al procesar la página JSP [/index.jsp] en línea [71]
+
+68:                 <tbody id="tbl_proveedor">
+69:                     <% 
+70:                         Proveedor proveedor = new Proveedor();
+71:                         DefaultTableModel tabla = proveedor.leer();
+72:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+73:                             out.println("<tr data-id='" + tabla.getValueAt(t, 0) + "'>");
+74:                             out.println("<td>" + tabla.getValueAt(t, 1) + "</td>");
+
+
+Stacktrace:] con causa raíz
+	java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "this.cn.conexionBD" is null
+		at modelo.Proveedor.leer(Proveedor.java:51)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:189)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 21:40:11.189 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+29-Oct-2024 21:40:11.189 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+29-Oct-2024 21:40:57.575 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+29-Oct-2024 21:40:57.575 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+29-Oct-2024 21:40:57.576 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@61615b4a')
+29-Oct-2024 21:41:00.690 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/Web_proyecto] lanzó la excepción [Ha sucedido una excepción al procesar la página JSP [index.jsp] en línea [71]
+
+68:                 <tbody id="tbl_proveedor">
+69:                     <% 
+70:                         Proveedor proveedor = new Proveedor();
+71:                         DefaultTableModel tabla = proveedor.leer();
+72:                         for (int t = 0; t < tabla.getRowCount(); t++) {
+73:                             out.println("<tr data-id='" + tabla.getValueAt(t, 0) + "'>");
+74:                             out.println("<td>" + tabla.getValueAt(t, 1) + "</td>");
+
+
+Stacktrace:] con causa raíz
+	java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "this.cn.conexionBD" is null
+		at modelo.Proveedor.leer(Proveedor.java:51)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:189)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:383)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1570)
+29-Oct-2024 22:54:48.441 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+29-Oct-2024 22:54:48.441 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
