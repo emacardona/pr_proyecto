@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package controlador;
+package controlador_proveedores;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,7 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Proveedor;
+import modelo_proveedores.Proveedor;
 
 /**
  *
@@ -51,25 +51,25 @@ public class sr_proveedor extends HttpServlet {
             // Verifica si el nombre del proveedor está vacío
             if (nombreProveedor == null || nombreProveedor.isEmpty()) {
                 out.println("<h1>Error: El nombre del proveedor es obligatorio</h1>");
-                out.println("<a href='index.jsp'>Regresar</a>");
+                out.println("<a href='Proveedores.jsp'>Regresar</a>");
                 return;
             }
                // Valida que el NIT tenga 12 dígitos
             if (nit == null || nit.isEmpty() || !nit.matches("\\d{12}")) {
                 out.println("<h1>Error: El NIT es obligatorio y debe contener 12 dígitos</h1>");
-                out.println("<a href='index.jsp'>Regresar</a>");
+                out.println("<a href='Proveedores.jsp'>Regresar</a>");
                 return;
             }
              // Verifica si la dirección está vacía
             if (direccion == null || direccion.isEmpty()) {
                 out.println("<h1>Error: La dirección es obligatoria</h1>");
-                out.println("<a href='index.jsp'>Regresar</a>");
+                out.println("<a href='Proveedores.jsp'>Regresar</a>");
                 return;
             }
             // Valida que el teléfono tenga entre 8 dígitos
             if (telefono == null || telefono.isEmpty() || !telefono.matches("\\d{8}")) {
                 out.println("<h1>Error: El teléfono es obligatorio y debe contener entre 8  dígitos</h1>");
-                out.println("<a href='index.jsp'>Regresar</a>");
+                out.println("<a href='Proveedores.jsp'>Regresar</a>");
                 return;
             }
             
@@ -87,10 +87,10 @@ public class sr_proveedor extends HttpServlet {
                 
             
             if (proveedor.agregar() > 0){
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("Proveedores.jsp");
             }else{
                 out.println("<h1>Error..........</h1>");
-                out.println("<a herf='index.jsp'>Regresar</a>");
+                out.println("<a herf='Proveedores.jsp'>Regresar</a>");
             }
             }
             //Boton Modificar
@@ -98,10 +98,10 @@ public class sr_proveedor extends HttpServlet {
                 
             
             if (proveedor.modificar() > 0){
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("Proveedores.jsp");
             }else{
                 out.println("<h1>Error..........</h1>");
-                out.println("<a herf='index.jsp'>Regresar</a>");
+                out.println("<a herf='Proveedores.jsp'>Regresar</a>");
             }
             }
              //Boton Eliminar
@@ -109,10 +109,10 @@ public class sr_proveedor extends HttpServlet {
                 
             
             if (proveedor.eliminar() > 0){
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("Proveedores.jsp");
             }else{
                 out.println("<h1>Error..........</h1>");
-                out.println("<a herf='index.jsp'>Regresar</a>");
+                out.println("<a herf='Proveedores.jsp'>Regresar</a>");
             }
             }
             

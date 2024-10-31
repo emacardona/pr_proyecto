@@ -3,7 +3,7 @@
     Created on : 13 oct 2024, 1:42:21 p.m.
     Author     : pc
 --%>
-<%@page import ="modelo.Proveedor"%>
+<%@page import ="modelo_proveedores.Proveedor"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="javax.swing.table.DefaultTableModel"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,49 +12,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Proveedores</title>
-        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     </head>
-    <style>
-     <%--  body {
-        background-color: transparent; /* Fondo transparente */
-        color: black; /* Texto blanco para que sea legible */
-        font-family: Arial, sans-serif;
-    }
-
-    .container {
-        background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para los elementos */
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    }
-  
-    .table-striped {
-    color: white; /* Texto blanco en toda la tabla */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente si es necesario */
-}
-
-.table-striped thead th {
-    color: white; /* Texto blanco en los encabezados */
-}
-
-.table-striped tbody td {
-    color: white; /* Texto blanco en el cuerpo */
-}
-
-.table-striped tbody tr:nth-child(odd) {
-    background-color: rgba(255, 255, 255, 0.1); /* Fila impar semi-transparente */
-}
-
-.table-striped tbody tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.2); /* Fila par semi-transparente */
-}
-
-.table-striped tbody tr:hover {
-    background-color: rgba(255, 255, 255, 0.3); /* Efecto hover en las filas */
-}--%>
-
-</style>
     <body>
         <h1 style="text-align: center;">Registro de Proveedores</h1>
         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modal_proveedores" onclick="limpiar()">Nuevo</button>
