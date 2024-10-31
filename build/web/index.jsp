@@ -66,6 +66,7 @@
 
             <!-- Id Cliente -->
             
+<!-- ID Cliente -->
 <div class="form-group mb-3">
     <label for="txt_id_cliente"><b>ID de Cliente</b></label> 
     <select name="txt_id_cliente" id="txt_id_cliente" class="form-control" required>
@@ -73,7 +74,7 @@
             Cliente cliente = new Cliente();
             DefaultTableModel tablaCliente = cliente.leer();
             for (int t = 0; t < tablaCliente.getRowCount(); t++) {
-                out.println("<option value='" + tablaCliente.getValueAt(t, 0) + "'>" + tablaCliente.getValueAt(t, 1) + "</option>"); // Cambiado a usar el ID como value y el nombre como texto
+                out.println("<option value='" + tablaCliente.getValueAt(t, 0) + "'>" + tablaCliente.getValueAt(t, 1) + "</option>");
             }
         %>
     </select>
@@ -126,7 +127,7 @@
             
             <div class="form-group mb-3">
             <label for='precio_unitario'><b>Precio Unitario:</b></label>
-            <input type='number' step='.01' name='precio_costo_unitario[]' class='form-control' id="txt_precio_unitario" required/>
+            <input type='number' step='.01' name='precio_unitario[]' class='form-control' id="txt_precio_unitario" required/>
             </div>
             </div>
             </div> 
@@ -139,12 +140,11 @@
             </form>
             </div>
             
-            <div class="form-group mb-3">
             <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar</button>  
             </div>
             </div>
             </div>
-            </div>
+            
 
             <table class="table table-striped">
             <thead>

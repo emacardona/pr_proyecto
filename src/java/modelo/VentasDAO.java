@@ -60,80 +60,18 @@ public class VentasDAO {
     }
 }
     
-    public void agregarVentaYDetalles(Venta venta, List<Ventadetalle> detalles) {
+   public void agregarVentaYDetalles(Venta venta, List<Ventadetalle> detalles) throws SQLException {
     PreparedStatement parametroVenta = null;
     PreparedStatement parametroDetalle = null;
 
     try {
         cn = new Conexion(); 
         cn.abrir_conexion(); 
+        cn.conexionBD.setAutoCommit(false); // Iniciar transacción
 
-        // 1. Insertar en la tabla compras
-        String queryVenta = "INSERT INTO ventas (no_factura, serie, fecha_factura, fecha_ingreso) VALUES (?, ?, ?, ?)";
+        // 1. Insertar en la tabla ventas
+        String queryVenta = "INSERT INTO ventas (no_factura, serie, fecha_factura, id_cliente, id_empleado, fecha_ingreso) VALUES (?, ?, ?, ?, ?, ?)";
         parametroVenta = cn.conexionBD.prepareStatement(queryVenta, PreparedStatement.RETURN_GENERATED_KEYS);
-        
-        parametroVenta.setInt(1, venta.getNo_factura());
-        parametroVenta.setString(2, venta.getSerie());
-        parametroVenta.setString(3, venta.getFecha_factura());
-        parametroVenta.setString(4, venta.getFecha_ingreso());
-
-        // Ejecutar la consulta de compra
-        parametroVenta.executeUpdate(); 
-
-        // Obtener el ID de la compra recién creada
-        ResultSet generatedKeys = parametroVenta.getGeneratedKeys();
-        int idNuevaVenta = 0;
-        if (generatedKeys.next()) {
-            idNuevaVenta = generatedKeys.getInt(1); 
-        }
-
-        // 2. Insertar en la tabla compras_detalle
-        String queryDetalle = "INSERT INTO ventas_detalle (id_Venta, id_producto, cantidad, precio_unitario) VALUES (?, ?, ?, ?)";
-        parametroDetalle = cn.conexionBD.prepareStatement(queryDetalle);
-
-        for (Ventadetalle detalle : detalles) {
-            detalle.setId_venta(idNuevaVenta); // Establecer el ID de compra
-
-            parametroDetalle.setInt(1, detalle.getId_venta());
-            parametroDetalle.setInt(2, detalle.getId_producto());
-            parametroDetalle.setInt(3, detalle.getCantidad());
-            parametroDetalle.setDouble(4, detalle.getPrecio_unitario());
-
-            // Ejecutar la consulta de detalle
-            parametroDetalle.executeUpdate();
-        }
-
-    } catch (SQLException ex) {
-        System.out.println("Error al agregar compra y detalles: " + ex.getMessage());
-    } finally {
-        try {
-            if (parametroVenta != null) {
-                parametroVenta.close();
-            }
-            if (parametroDetalle != null) {
-                parametroDetalle.close();
-            }
-            if (cn != null) {
-                cn.cerrar_conexion(); // Cierra la conexión
-            }
-        } catch (SQLException e) {
-            System.out.println("Error al cerrar recursos: " + e.getMessage());
-        }
-    }
-}
-    
-    
-    public void actualizarVentaYDetalles(Venta venta, List<Ventadetalle> detalles) {
-    PreparedStatement parametroVenta = null;
-    PreparedStatement parametroDetalle = null;
-
-    try {
-        cn = new Conexion(); // Inicializa la conexión
-        cn.abrir_conexion(); // Abre la conexión
-
-        // 1. Actualizar en la tabla compras
-        String queryVenta = "UPDATE ventas SET no_factura = ?, serie = ?, fecha_factura = ?, id_cliente = ?, id_empleado = ?, fecha_ingreso = ? WHERE id_Venta = ?";
-        parametroVenta = cn.conexionBD.prepareStatement(queryVenta);
         
         parametroVenta.setInt(1, venta.getNo_factura());
         parametroVenta.setString(2, venta.getSerie());
@@ -143,17 +81,106 @@ public class VentasDAO {
         parametroVenta.setString(6, venta.getFecha_ingreso());
 
         
-        parametroVenta.executeUpdate();
+        int filasAfectadas = parametroVenta.executeUpdate();
+        if (filasAfectadas == 0) {
+            throw new SQLException("No se pudo insertar la venta.");
+        }
+
+        // Obtener el ID de la venta recién creada
+        ResultSet generatedKeys = parametroVenta.getGeneratedKeys();
+        int idNuevaVenta = 0;
+        if (generatedKeys.next()) {
+            idNuevaVenta = generatedKeys.getInt(1);
+        }
+
+        if (detalles.isEmpty()) {
+                System.out.println("No se encontraron detalles para insertar.");
+                cn.conexionBD.rollback();
+                return;
+            }
+        
+        // 2. Insertar en la tabla ventas_detalle
+        String queryDetalle = "INSERT INTO ventas_detalle (id_Venta, id_Producto, cantidad, precio_unitario) VALUES (?, ?, ?, ?)";
+        parametroDetalle = cn.conexionBD.prepareStatement(queryDetalle);
+
+        for (Ventadetalle detalle : detalles) {
+            System.out.println("Insertando detalle: ID Venta: " + idNuevaVenta + 
+                               ", ID Producto: " + detalle.getId_producto() + 
+                               ", Cantidad: " + detalle.getCantidad() + 
+                               ", Precio Unitario: " + detalle.getPrecio_unitario());
+
+            parametroDetalle.setInt(1, idNuevaVenta);
+            parametroDetalle.setInt(2, detalle.getId_producto());
+            parametroDetalle.setInt(3, detalle.getCantidad());
+            parametroDetalle.setDouble(4, detalle.getPrecio_unitario());
+
+
+            int filasDetallesAfectadas = parametroDetalle.executeUpdate();
+            if (filasDetallesAfectadas == 0) {
+                throw new SQLException("No se pudo insertar el detalle de la venta.");
+            }
+        }
+
+        cn.conexionBD.commit(); // Confirmar transacción
+
+    } catch (SQLException ex) {
+        if (cn != null) {
+            cn.conexionBD.rollback(); // Revertir cambios en caso de error
+        }
+        System.out.println("Error al agregar venta y detalles: " + ex.getMessage());
+    } finally {
+       try {
+           if (parametroVenta != null) {
+               parametroVenta.close();
+           }
+           if (parametroDetalle != null) {
+               parametroDetalle.close();
+           }
+           if (cn != null) {
+               cn.cerrar_conexion(); 
+           }
+       } catch (SQLException e) {
+           System.out.println("Error al cerrar recursos: " + e.getMessage());
+       }
+    }
+}
+    
+    
+    public void actualizarVentaYDetalles(Venta venta, List<Ventadetalle> detalles) {
+    PreparedStatement parametroVenta = null;
+    PreparedStatement parametroDetalle = null;
+
+    try {
+        cn = new Conexion(); 
+        cn.abrir_conexion(); 
+
+        // 1. Actualizar en la tabla ventas
+        String queryVenta = "UPDATE ventas SET no_factura = ?, serie = ?, fecha_factura = ?, id_cliente = ?, id_empleado = ?, fecha_ingreso = ? WHERE id_Venta = ?";
+        parametroVenta = cn.conexionBD.prepareStatement(queryVenta);
+        
+        parametroVenta.setInt(1, venta.getNo_factura());
+        parametroVenta.setString(2, venta.getSerie());
+        parametroVenta.setString(3, venta.getFecha_factura());
+        parametroVenta.setInt(4, venta.getId_cliente()); // Asegúrate de establecer el ID del cliente
+        parametroVenta.setInt(5, venta.getId_empleado()); // Asegúrate de establecer el ID del empleado
+        parametroVenta.setString(6, venta.getFecha_ingreso());
+        parametroVenta.setInt(7, venta.getId_venta()); // Establecer el ID para actualizar
+
+        int filasActualizadas = parametroVenta.executeUpdate();
+        
+        if (filasActualizadas == 0) {
+            throw new SQLException("No se pudo actualizar la venta.");
+        }
 
         // 2. Eliminar los detalles existentes antes de agregar los nuevos
-        eliminarDetallesPorIdVenta(venta.getId_venta()); // Método para eliminar detalles existentes
+        eliminarDetallesPorIdVenta(venta.getId_venta());
 
         // 3. Insertar los nuevos detalles
         String queryDetalle = "INSERT INTO ventas_detalle (id_Venta, id_producto, cantidad, precio_unitario) VALUES (?, ?, ?, ?)";
         parametroDetalle = cn.conexionBD.prepareStatement(queryDetalle);
 
         for (Ventadetalle detalle : detalles) {
-            detalle.setId_venta(venta.getId_venta()); // Establecer el ID de compra
+            detalle.setId_venta(venta.getId_venta()); 
 
             parametroDetalle.setInt(1, detalle.getId_venta());
             parametroDetalle.setInt(2, detalle.getId_producto());
@@ -167,19 +194,19 @@ public class VentasDAO {
     } catch (SQLException ex) {
         System.out.println("Error al actualizar venta y detalles: " + ex.getMessage());
     } finally {
-        try {
-            if (parametroVenta != null) {
-                parametroVenta.close();
-            }
-            if (parametroDetalle != null) {
-                parametroDetalle.close();
-            }
-            if (cn != null) {
-                cn.cerrar_conexion(); // Cierra la conexión
-            }
-        } catch (SQLException e) {
-            System.out.println("Error al cerrar recursos: " + e.getMessage());
-        }
+       try {
+           if (parametroVenta != null) {
+               parametroVenta.close();
+           }
+           if (parametroDetalle != null) {
+               parametroDetalle.close();
+           }
+           if (cn != null) {
+               cn.cerrar_conexion(); 
+           }
+       } catch (SQLException e) {
+           System.out.println("Error al cerrar recursos: " + e.getMessage());
+       }
     }
 }
     

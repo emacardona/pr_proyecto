@@ -3,20 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 package controlador;
-import modelo.Marca;
 import modelo.Venta;
 import modelo.VentasDAO;
 import modelo.Ventadetalle;
+import modelo.Marca;
 import modelo.Cliente;
 import modelo.Empleado;
+import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import jakarta.servlet.annotation.WebServlet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+ import java.util.logging.Level;
+ import java.util.logging.Logger;
 
 /**
  *
@@ -25,31 +28,17 @@ import java.util.List;
 @WebServlet(name = "sr_ventas", urlPatterns = {"/sr_ventas"})
 public class sr_ventas extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException , SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        String menu = request.getParameter("menu"); //aquí almacena la variable del menu
-                                                    //depende de la opción que seleccione del menú
-                                                    //corre mi metodo "handleNuevaVenta"
-
-        if ("Nueva_venta".equals(menu)) {
         handleNuevaVenta(request, response);
-        } else {
-            response.sendRedirect("index.jsp");
-        }
-}   
+    }
+           
         
-        private void handleNuevaVenta(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	String action = request.getParameter("action");
+        private void handleNuevaVenta(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+    String action = request.getParameter("btn_agregar") != null ? "agregar" :
+                    request.getParameter("btn_modificar") != null ? "actualizar" :
+                    request.getParameter("btn_eliminar") != null ? "eliminar" : null;
 	VentasDAO ventasDAO = new VentasDAO(); // Crear instancia de ComprasDAO
 	// Obtener los parámetros de venta
 
@@ -59,12 +48,18 @@ public class sr_ventas extends HttpServlet {
         String idEmpleadoStr = request.getParameter("txt_id_empleado"); // ID del empleado
         String fechaIngreso = request.getParameter("txt_fecha_ingreso");
         String idVentaStr = request.getParameter("txt_id_venta"); // ID de la venta, solo en caso de actualización
-
+        
+        System.out.println("ID Cliente: " + idClienteStr);
+        System.out.println("ID Empleado: " + idEmpleadoStr);
+        
 	// Validar que los campos requeridos no estén vacíos
-	if(serie == null || serie.isEmpty() || fechaFactura == null || fechaFactura.isEmpty() || idClienteStr == null || idClienteStr.isEmpty() || idEmpleadoStr == null || idEmpleadoStr.isEmpty() || fechaIngreso == null || fechaIngreso.isEmpty() || (action.equals("actualizar") && (idVentaStr == null || idVentaStr.isEmpty()))) { // Validar idCompraStr solo si se actualiza
-		request.getRequestDispatcher("index.jsp").forward(request, response);
-		return;
-	}
+	if (serie == null || serie.isEmpty() || fechaFactura == null || fechaFactura.isEmpty() ||
+            idClienteStr == null || idClienteStr.isEmpty() || idEmpleadoStr == null || 
+            idEmpleadoStr.isEmpty() || fechaIngreso == null || fechaIngreso.isEmpty() ||
+            (action.equals("actualizar") && (idVentaStr == null || idVentaStr.isEmpty()))) {
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+            return;
+        }
 
 	int idCliente;
         int idEmpleado;
@@ -118,6 +113,7 @@ public class sr_ventas extends HttpServlet {
 				break;
 		}
 	} catch (NumberFormatException e) {
+            
 		response.sendRedirect("index.jsp");
 	}
 }
@@ -125,13 +121,21 @@ public class sr_ventas extends HttpServlet {
          @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(sr_ventas.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(sr_ventas.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
@@ -141,23 +145,39 @@ public class sr_ventas extends HttpServlet {
 
 
     
-     private List<Ventadetalle> obtenerDetallesDesdeFormulario(HttpServletRequest request) {
-    List<Ventadetalle> detalles = new ArrayList<>();
-    
-    String[] idsProductos = request.getParameterValues("id_producto[]");
-    String[] cantidades = request.getParameterValues("cantidad[]"); 
-    String[] preciosUnitarios = request.getParameterValues("precio_unitario[]");
+    public List<Ventadetalle> obtenerDetallesDesdeFormulario(HttpServletRequest request) {
+        List<Ventadetalle> detalles = new ArrayList<>();
+        
+        String[] idsProductos = request.getParameterValues("id_producto[]");
+        String[] cantidades = request.getParameterValues("cantidad[]"); 
+        String[] preciosUnitarios = request.getParameterValues("precio_unitario[]");
 
-    if (idsProductos != null && cantidades != null && preciosUnitarios != null) {
-        for (int i = 0; i < idsProductos.length; i++) {
-            Ventadetalle detalle = new Ventadetalle();
-            detalle.setId_producto(Integer.parseInt(idsProductos[i])); // Establecer ID del producto
-            detalle.setCantidad(Integer.parseInt(cantidades[i])); // Establecer cantidad
-            detalle.setPrecio_unitario(Double.parseDouble(preciosUnitarios[i])); // Establecer precio unitario
-            
-            detalles.add(detalle); // Agregar a la lista
+        // Validar que los datos del formulario se están recuperando correctamente
+        System.out.println("ID Productos: " + java.util.Arrays.toString(idsProductos));
+        System.out.println("Cantidades: " + java.util.Arrays.toString(cantidades));
+        System.out.println("Precios Unitarios: " + java.util.Arrays.toString(preciosUnitarios));
+
+        // Validar que los arreglos tengan el mismo tamaño
+        if (idsProductos != null && cantidades != null && preciosUnitarios != null) {
+            if (idsProductos.length != cantidades.length || idsProductos.length != preciosUnitarios.length) {
+                System.out.println("Los arreglos de detalles tienen tamaños inconsistentes.");
+                return detalles; // Retorna la lista vacía si los tamaños no coinciden
+            }
+
+            for (int i = 0; i < idsProductos.length; i++) {
+                try {
+                    Ventadetalle detalle = new Ventadetalle();
+                    detalle.setId_producto(Integer.parseInt(idsProductos[i])); // Establecer ID del producto
+                    detalle.setCantidad(Integer.parseInt(cantidades[i])); // Establecer cantidad
+                    detalle.setPrecio_unitario(Double.parseDouble(preciosUnitarios[i])); // Establecer precio unitario
+                    
+                    detalles.add(detalle); // Agregar a la lista
+                } catch (NumberFormatException e) {
+                    System.out.println("Error al parsear un valor en el índice " + i + ": " + e.getMessage());
+                }
+            }
         }
+        
+        return detalles; // Devolver la lista de detalles
     }
-    return detalles; // Devolver la lista de detalles
-    }             
 }
