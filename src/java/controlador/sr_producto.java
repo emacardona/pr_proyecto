@@ -8,10 +8,12 @@ package controlador;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo_producto.Marca;
+
 
 public class sr_producto extends HttpServlet {
 
@@ -45,12 +47,12 @@ public class sr_producto extends HttpServlet {
                     eliminarProducto(response, out);
                 } else {
                     out.println("<h1>Acción no válida.</h1>");
-                    out.println("<a href='index.jsp'>Regresar</a>");
+                    out.println("<a href='Productos.jsp'>Regresar</a>");
                 }
 
             } catch (NumberFormatException e) {
                 out.println("<h1>Error en los parámetros: " + e.getMessage() + "</h1>");
-                out.println("<a href='index.jsp'>Regresar</a>");
+                out.println("<a href='Productos.jsp'>Regresar</a>");
             }
         }
     }
@@ -58,42 +60,42 @@ public class sr_producto extends HttpServlet {
     private void agregarProducto(HttpServletResponse response, PrintWriter out) throws IOException {
         try {
             if (marca.agregar() > 0) {
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("Productos.jsp");
             } else {
                 out.println("<h1>Error al agregar producto.</h1>");
-                out.println("<a href='index.jsp'>Regresar</a>");
+                out.println("<a href='Productos.jsp'>Regresar</a>");
             }
         } catch (Exception e) {
             out.println("<h1>Error al agregar producto: " + e.getMessage() + "</h1>");
-            out.println("<a href='index.jsp'>Regresar</a>");
+            out.println("<a href='Productos.jsp'>Regresar</a>");
         }
     }
 
     private void modificarProducto(HttpServletResponse response, PrintWriter out) throws IOException {
         try {
             if (marca.modificar() > 0) {
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("Productos.jsp");
             } else {
                 out.println("<h1>Error al modificar producto.</h1>");
-                out.println("<a href='index.jsp'>Regresar</a>");
+                out.println("<a href='Productos.jsp'>Regresar</a>");
             }
         } catch (Exception e) {
             out.println("<h1>Error al modificar producto: " + e.getMessage() + "</h1>");
-            out.println("<a href='index.jsp'>Regresar</a>");
+            out.println("<a href='Productos.jsp'>Regresar</a>");
         }
     }
 
     private void eliminarProducto(HttpServletResponse response, PrintWriter out) throws IOException {
         try {
             if (marca.eliminar() > 0) {
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("Productos.jsp");
             } else {
                 out.println("<h1>Error al eliminar producto.</h1>");
-                out.println("<a href='index.jsp'>Regresar</a>");
+                out.println("<a href='Productos.jsp'>Regresar</a>");
             }
         } catch (Exception e) {
             out.println("<h1>Error al eliminar producto: " + e.getMessage() + "</h1>");
-            out.println("<a href='index.jsp'>Regresar</a>");
+            out.println("<a href='Productos.jsp'>Regresar</a>");
         }
     }
 
