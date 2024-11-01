@@ -1,4 +1,4 @@
-<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.ResultSet" %>
@@ -100,6 +100,10 @@
         tr:hover {
             background-color: #f1f1f1;
         }
+        #nit-error {
+            color: red;
+            display: none;
+        }
     </style>
     <script>
         function seleccionarFila(index) {
@@ -113,7 +117,17 @@
             document.getElementById('genero').value = clienteData.genero;
             document.getElementById('telefono').value = clienteData.telefono;
             document.getElementById('correo').value = clienteData.correoElectronico;
-            document.getElementById('fecha_ingreso').value = clienteData.fechaIngreso; // Se utiliza el formato correcto
+            document.getElementById('fecha_ingreso').value = clienteData.fechaIngreso;
+        }
+
+        function validarNIT(input) {
+            const nitError = document.getElementById('nit-error');
+            const valor = input.value;
+            if (valor.length !== 8 && valor.length !== 12) {
+                nitError.style.display = 'block';
+            } else {
+                nitError.style.display = 'none';
+            }
         }
     </script>
 </head>
@@ -140,7 +154,8 @@
             <input type="text" id="apellidos" name="apellidos" required>
             
             <label for="nit">NIT:</label>
-            <input type="text" id="nit" name="nit" required>
+            <input type="text" id="nit" name="nit" required pattern="^\d{8}(\d{4})?$" title="El NIT debe contener 8 o 12 dígitos" oninput="validarNIT(this)">
+            <p id="nit-error">El NIT debe tener 8 o 12 dígitos.</p>
             
             <label for="genero">Género:</label>
             <select id="genero" name="genero">
