@@ -42,7 +42,8 @@
             <button type="button" id="btn_descargar" onclick="descargarImagen()" class="btn btn-info" style="margin-top: 10px; display: none;">Descargar</button>
 
             <input type="hidden" name="current_image_path" id="current_image_path">
-
+             
+            <br></br> 
             <label for="lbl_precio_costo"><b>Precio Costo:</b></label>
             <input type="number" name="txt_precio_costo" id="txt_precio_costo" class="form-control" placeholder="Ejemplo: 500.00" required>
 
@@ -98,6 +99,8 @@
             </tbody>
         </table>
     </div> 
+            
+            
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
@@ -127,32 +130,33 @@
                 document.body.removeChild(link);
             } else {
                 alert("No hay imagen seleccionada para descargar.");
-            }
+            } 
         }
 
         $('#tbl_productos').on('click', 'tr', function() { 
-            var id = $(this).data('id');
-            var id_Marca = $(this).data('id_marca'); 
-            var producto = $(this).find("td").eq(0).html();
-            var descripcion = $(this).find("td").eq(1).html();
-            var imagen = $(this).find("td").eq(2).find("img").attr("src");
-            var precio_costo = $(this).find("td").eq(3).html();
-            var precio_venta = $(this).find("td").eq(4).html();
-            var existencia = $(this).find("td").eq(5).html();
-            var fecha_ingreso = $(this).find("td").eq(6).html();
+    var id = $(this).data('id');
+    var id_Marca = $(this).data('id_marca'); 
+    var producto = $(this).find("td").eq(0).html();
+    var descripcion = $(this).find("td").eq(1).html();
+    var imagen = $(this).find("td").eq(2).find("img").attr("src");
+    var precio_costo = $(this).find("td").eq(3).html();
+    var precio_venta = $(this).find("td").eq(4).html();
+    var existencia = $(this).find("td").eq(5).html();
+    var fecha_ingreso = $(this).find("td").eq(6).html();
 
-            $('#txt_id').val(id);
-            $('#drop_marca').val(id_Marca);
-            $('#txt_producto').val(producto);
-            $('#txt_descripcion').val(descripcion);
-            $('#img_preview').attr("src", imagen).show();
-            $('#txt_precio_costo').val(precio_costo);
-            $('#txt_precio_venta').val(precio_venta);
-            $('#txt_existencia').val(existencia);
-            $('#txt_fecha_ingreso').val(fecha_ingreso);
-            $('#btn_descargar').show(); // Muestra el botón de descarga
-        });
-        
+    $('#txt_id').val(id);
+    $('#drop_marca').val(id_Marca);
+    $('#txt_producto').val(producto);
+    $('#txt_descripcion').val(descripcion);
+    $('#current_image_path').val(imagen); // Guardar la ruta de la imagen
+    $('#img_preview').attr("src", imagen).show(); // Mostrar la vista previa
+    $('#txt_precio_costo').val(precio_costo);
+    $('#txt_precio_venta').val(precio_venta);
+    $('#txt_existencia').val(existencia);
+    $('#txt_fecha_ingreso').val(fecha_ingreso);
+    $('#btn_descargar').show(); // Mostrar el botón de descarga
+});
+
         function limpiarPantalla() {
             $('#txt_id').val(0);
             $('#drop_marca').val("");
