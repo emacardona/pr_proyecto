@@ -7,6 +7,8 @@
     }
 %>
 <%@ page import="java.sql.*" %>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,20 +16,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú Dinámico</title>
     <style>
+        /* Tu estilo de menú */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: Arial, sans-serif;
             height: 100vh;
             display: flex;
             flex-direction: column;
         }
-
-        /* Fondo del menú */
         .menu-background {
             flex-grow: 1;
             background-size: cover;
@@ -35,47 +35,40 @@
             display: flex;
             flex-direction: column;
         }
-
         header {
             padding: 20px;
             text-align: center;
             background-color: rgba(0, 0, 0, 1);
             color: white;
             font-size: 2rem;
+            position: relative;
         }
-
         nav {
             background-color: rgba(0, 0, 0, 1);
             padding: 10px;
         }
-
         nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
         }
-
         nav ul li {
             position: relative;
             margin: 0 15px;
             display: inline-block;
         }
-
         nav ul ul {
             position: absolute;
-            top: 100%; /* Submenú justo debajo del menú principal */
+            top: 100%;
             left: 0;
             background-color: rgba(50, 50, 50, 0.9);
             display: none;
             min-width: 150px;
             z-index: 3;
         }
-
-        /* Mostrar submenú cuando el ratón pasa sobre el menú principal */
         nav ul li:hover > ul {
             display: block;
         }
-
         nav ul li a {
             text-decoration: none;
             color: white;
@@ -85,29 +78,23 @@
             transition: background-color 0.3s ease;
             display: block;
         }
-
         nav ul li a:hover {
             background-color: rgba(255, 255, 255, 0.5);
         }
-
         nav ul ul li a {
             background-color: rgba(50, 50, 50, 0.9);
             padding: 10px;
             display: block;
         }
-
-        /* Estilos para hacer el menú responsivo */
         @media (max-width: 768px) {
             nav ul {
                 flex-direction: column;
                 align-items: center;
             }
-
             nav ul li {
                 margin: 10px 0;
             }
         }
-          /* Estilos adicionales para usuario y cierre de sesión */
         .user-info {
             position: absolute;
             top: 10px;
@@ -117,7 +104,6 @@
             display: flex;
             align-items: center;
         }
-
         .logout-button {
             margin-left: 10px;
             padding: 5px 10px;
@@ -143,43 +129,74 @@
 
     <nav>
         <ul>
-            <% 
+            <%
                 // Conexión a la base de datos
                 Connection conn = null;
-                Statement stmt = null;
+                PreparedStatement stmt = null;
                 ResultSet rs = null;
 
                 try {
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_tiendaa", "root", "alexanderlima");
+                    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_tienda", "root", "kevinlima");
 
-                    stmt = conn.createStatement();
-                    rs = stmt.executeQuery("SELECT * FROM menus WHERE parent_id IS NULL");
+                    // Consulta para obtener todos los menús
+                    String query = "SELECT * FROM menus";
+                    stmt = conn.prepareStatement(query);
+                    rs = stmt.executeQuery();
 
+                    // Mapa para almacenar los menús principales y sus submenús
+                    HashMap<Integer, ArrayList<String[]>> menuMap = new HashMap<>();
+
+                    // Procesar los resultados
                     while (rs.next()) {
-                        int parentId = rs.getInt("id");
-                        String parentName = rs.getString("name");
-                        String parentUrl = rs.getString("url");
+                        int id = rs.getInt("id");
+                        String name = rs.getString("name");
+                        String url = rs.getString("url");
+                        int parentId = rs.getInt("parent_id");
 
-                        Statement subMenuStmt = conn.createStatement();
-                        ResultSet subMenuRs = subMenuStmt.executeQuery("SELECT * FROM menus WHERE parent_id = " + parentId);
-
-                        if (subMenuRs.next()) {
-                            out.println("<li><a href='" + parentUrl + "' target='content-frame'>" + parentName + "</a>");
-                            out.println("<ul>");
-                            do {
-                                String subMenuName = subMenuRs.getString("name");
-                                String subMenuUrl = subMenuRs.getString("url");
-                                out.println("<li><a href='" + subMenuUrl + "' target='content-frame'>" + subMenuName + "</a></li>");
-                            } while (subMenuRs.next());
-                            out.println("</ul>");
-                            out.println("</li>");
+                        // Si es un menú principal, lo añadimos como clave
+                        if (parentId == 0) {
+                            menuMap.put(id, new ArrayList<>());
                         } else {
-                            out.println("<li><a href='" + parentUrl + "' target='content-frame'>" + parentName + "</a></li>");
+                            // Añadir submenús
+                            if (!menuMap.containsKey(parentId)) {
+                                menuMap.put(parentId, new ArrayList<>());
+                            }
+                            menuMap.get(parentId).add(new String[]{name, url});
+                        }
+                    }
+
+                    // Generar el menú principal con submenús
+                    for (Integer parentId : menuMap.keySet()) {
+                        // Obtener el nombre y URL del menú principal
+                        String parentQuery = "SELECT name, url FROM menus WHERE id = ?";
+                        PreparedStatement parentStmt = conn.prepareStatement(parentQuery);
+                        parentStmt.setInt(1, parentId);
+                        ResultSet parentRs = parentStmt.executeQuery();
+
+                        if (parentRs.next()) {
+                            String parentName = parentRs.getString("name");
+                            String parentUrl = parentRs.getString("url");
+
+                            // Mostrar el menú principal
+                            out.println("<li><a href='" + parentUrl + "' target='content-frame'>" + parentName + "</a>");
+
+                            // Mostrar submenús si existen
+                            ArrayList<String[]> subMenus = menuMap.get(parentId);
+                            if (!subMenus.isEmpty()) {
+                                out.println("<ul>");
+                                for (String[] subMenu : subMenus) {
+                                    String subMenuName = subMenu[0];
+                                    String subMenuUrl = subMenu[1];
+                                    out.println("<li><a href='" + subMenuUrl + "' target='content-frame'>" + subMenuName + "</a></li>");
+                                }
+                                out.println("</ul>");
+                            }
+                            out.println("</li>");
                         }
 
-                        subMenuRs.close();
-                        subMenuStmt.close();
+                        parentRs.close();
+                        parentStmt.close();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -196,6 +213,7 @@
     <iframe id="content-frame" name="content-frame" style="width: 100%; height: calc(100vh - 50px); border: none;"></iframe>
 </body>
 </html>
+
 
 
 

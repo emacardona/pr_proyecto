@@ -9,9 +9,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConexionBD {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/db_tiendaa";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/db_tienda";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "alexanderlima";
+    private static final String DB_PASSWORD = "kevinlima";
 
     public static Connection obtenerConexion() {
         Connection conn = null;

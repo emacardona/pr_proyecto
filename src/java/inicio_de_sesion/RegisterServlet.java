@@ -34,9 +34,9 @@ public class RegisterServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
             // Información de conexión a la base de datos
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/db_tiendaa";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/db_tienda";
     private static final String DB_USER = "root"; // Cambia esto a tu usuario de MySQL
-    private static final String DB_PASSWORD = "alexanderlima"; // Cambia esto a tu contraseña de MySQL
+    private static final String DB_PASSWORD = "kevinlima"; // Cambia esto a tu contraseña de MySQL
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

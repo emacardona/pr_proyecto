@@ -18,10 +18,10 @@ import javax.swing.JOptionPane;
 public class Conexion {
     public Connection  conexionBD;
     private final String puerto = "3306";
-    public final String bd = "db_tiendaa";
+    public final String bd = "db_tienda";
     public final  String urlConexion = String.format("jdbc:mysql://127.0.0.1:3306/%s", bd);
     public final String usuario = "root";
-    public final String contra = "alexanderlima";
+    public final String contra = "kevinlima";
     public final String jdbc = "com.mysql.cj.jdbc.Driver";
     
     public void  abrir_conexion (){
