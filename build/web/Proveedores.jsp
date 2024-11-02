@@ -3,7 +3,7 @@
     Created on : 13 oct 2024, 1:42:21 p.m.
     Author     : pc
 --%>
-<%@page import ="modelo_proveedores.Proveedor"%>
+<%@page import ="modelo.Proveedor"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="javax.swing.table.DefaultTableModel"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

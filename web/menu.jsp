@@ -132,7 +132,7 @@
 </head>
 <body>
     <header>
-        Menú 
+        Menú Principal.
         <div class="user-info">
             <span>Bienvenido, <%= nombreUsuario %>!</span>
             <form action="LogoutServlet" method="post" style="display:inline;">
